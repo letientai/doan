@@ -11,11 +11,11 @@ function Router() {
     return(
         <BrowserRouter>
             <Switch>
-                <Route path="/doan/" component={Home}/>
-                <Route path="/doan/introduct" component={Introduct} />
-                <Route path="/doan/contact" component={Contact} />
-                <Route path="/doan/login" exact component={Login} />
-                <Route path="/doan/register" component={Register} />
+                <Route path="/" component={Home}/>
+                <Route path="/introduct" component={Introduct} />
+                <Route path="/contact" component={Contact} />
+                <Route path="/login" exact component={Login} />
+                <Route path="/register" component={Register} />
                 <Route component={NotFoundPage} />
             </Switch>
         </BrowserRouter>
