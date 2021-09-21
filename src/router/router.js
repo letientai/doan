@@ -11,7 +11,7 @@ function Router() {
     return(
         <BrowserRouter>
             <Switch>
-                <Route path="/" component={Home} exact/>
+                <Route path="/doan" component={Home} exact/>
                 <Route path="/introduct" component={Introduct} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/login" component={Login} />
