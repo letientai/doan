@@ -14,7 +14,7 @@ function Router() {
                 <Route path="/" component={Home} exact/>
                 <Route path="/introduct" component={Introduct} />
                 <Route path="/contact" component={Contact} />
-                <Route path="/login" component={Login} />
+                <Route path="/doan/login" component={Login} />
                 <Route path="/register" component={Register} />
                 <Route component={NotFoundPage} />
             </Switch>
