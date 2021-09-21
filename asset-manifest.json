@@ -1,23 +1,26 @@
 {
   "files": {
-    "main.css": "/doan/static/css/main.a617e044.chunk.css",
-    "main.js": "/doan/static/js/main.670b4735.chunk.js",
-    "main.js.map": "/doan/static/js/main.670b4735.chunk.js.map",
-    "runtime-main.js": "/doan/static/js/runtime-main.43efb212.js",
-    "runtime-main.js.map": "/doan/static/js/runtime-main.43efb212.js.map",
-    "static/js/2.14a460b5.chunk.js": "/doan/static/js/2.14a460b5.chunk.js",
-    "static/js/2.14a460b5.chunk.js.map": "/doan/static/js/2.14a460b5.chunk.js.map",
-    "static/js/3.191a823c.chunk.js": "/doan/static/js/3.191a823c.chunk.js",
-    "static/js/3.191a823c.chunk.js.map": "/doan/static/js/3.191a823c.chunk.js.map",
+    "main.css": "/doan/static/css/main.bc9a183b.chunk.css",
+    "main.js": "/doan/static/js/main.6b7b7fe3.chunk.js",
+    "main.js.map": "/doan/static/js/main.6b7b7fe3.chunk.js.map",
+    "runtime-main.js": "/doan/static/js/runtime-main.41cc8b75.js",
+    "runtime-main.js.map": "/doan/static/js/runtime-main.41cc8b75.js.map",
+    "static/css/2.961bfe8f.chunk.css": "/doan/static/css/2.961bfe8f.chunk.css",
+    "static/js/2.b6ac01bd.chunk.js": "/doan/static/js/2.b6ac01bd.chunk.js",
+    "static/js/2.b6ac01bd.chunk.js.map": "/doan/static/js/2.b6ac01bd.chunk.js.map",
+    "static/js/3.8a984e56.chunk.js": "/doan/static/js/3.8a984e56.chunk.js",
+    "static/js/3.8a984e56.chunk.js.map": "/doan/static/js/3.8a984e56.chunk.js.map",
     "index.html": "/doan/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/doan/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.14a460b5.chunk.js.LICENSE.txt": "/doan/static/js/2.14a460b5.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/doan/static/media/logo.6ce24c58.svg"
+    "static/css/2.961bfe8f.chunk.css.map": "/doan/static/css/2.961bfe8f.chunk.css.map",
+    "static/css/main.bc9a183b.chunk.css.map": "/doan/static/css/main.bc9a183b.chunk.css.map",
+    "static/js/2.b6ac01bd.chunk.js.LICENSE.txt": "/doan/static/js/2.b6ac01bd.chunk.js.LICENSE.txt",
+    "static/media/semantic.min.css": "/doan/static/media/outline-icons.ddae9b1b.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.43efb212.js",
-    "static/js/2.14a460b5.chunk.js",
-    "static/css/main.a617e044.chunk.css",
-    "static/js/main.670b4735.chunk.js"
+    "static/js/runtime-main.41cc8b75.js",
+    "static/css/2.961bfe8f.chunk.css",
+    "static/js/2.b6ac01bd.chunk.js",
+    "static/css/main.bc9a183b.chunk.css",
+    "static/js/main.6b7b7fe3.chunk.js"
   ]
 }
