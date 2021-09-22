@@ -16,7 +16,7 @@ function Router() {
                 <Route path="/contact" component={Contact} />
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
-                <Route component={home} />
+                <Route component={Login} />
             </Switch>
         </BrowserRouter>
     )
