@@ -5,18 +5,20 @@ import Introduct from "../pages/introduct/introduct";
 import Login from "../pages/login/login";
 import NotFoundPage from "../pages/notFound/notFound";
 import Register from "../pages/register/register";
+import ProductDetail from "../pages/productDetail/productDetail";
 
 
 function Router() {
     return(
         <BrowserRouter>
             <Switch>
-                <Route path="/" component={Home} exact/>
-                <Route path="/introduct" component={Introduct} />
-                <Route path="/contact" component={Contact} />
-                <Route path="/login" component={Login} />
-                <Route path="/register" component={Register} />
-                <Route component={Login} />
+                <Route path="/doan/" component={Home} exact/>
+                <Route path="/doan/introduct" component={Introduct} />
+                <Route path="/doan/contact" component={Contact} />
+                <Route path="/doan/login" component={Login} />
+                <Route path="/doan/register" component={Register} />
+                <Route path="/doan/productDetail" component={ProductDetail} />
+                <Route component={Home} />
             </Switch>
         </BrowserRouter>
     )

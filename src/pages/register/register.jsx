@@ -28,7 +28,7 @@ function Register() {
       if (cfpassword === password) {
         console.log("Đăng ký thành công");
         alert("Đăng ký thành công!!!");
-        history.push("/login");
+        history.push("/doan/login");
       } else {
         console.log("Đăng ký thất bại");
         alert("Mật khẩu không trùng nhau!!!");
