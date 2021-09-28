@@ -3,152 +3,100 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../../components/navbar/navbar";
 import Card from "../../components/cards/card";
 import products from "../../assets/data/product";
-import { Icon, Input, Segment } from "semantic-ui-react";
+import { Icon, Input, Segment, Pagination } from "semantic-ui-react";
+const axios = require("axios");
 
 function Home() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
   const [price, setPrice] = useState("");
   const [brand, setBrand] = useState("");
-  const axios = require("axios");
-
+  const [loading, setLoading] = useState(true);
+  const [pageNumber, setPageNumber] = useState(1);
+  const [totalPage, setTotalPage] = useState(1);
 
   const onChangeSearch = (e) => {
     setSearch(e.target.value);
-    console.log(e.target.value);
   };
-  // const onChangeBrand = (e) =>{
-  //   setBrand(e.target.value);
-  // }
 
   const onSubmitSearch = (e) => {
-    // setData(
-    //   products.filter((item) =>
-    //     item?.name?.toLocaleLowerCase()?.includes(search?.toLocaleLowerCase())
-    //   )
-    // );
-    const searchName = "https://lap-center.herokuapp.com/api/product?productName=";
-    const linkSearchName = searchName.concat(search)
-    console.log(linkSearchName);
-    axios
-      .get(linkSearchName)
-      .then(function (response) {
-        setData(response.data.products);
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
-      setPrice("")
-      setBrand("All")
-  };
-  const onSubmitBrand = async (e) => {
-    await setBrand(e.target.value);
-    // await setData(
-    //   products.filter((item) =>
-    //     item?.name
-    //       ?.toLocaleLowerCase()
-    //       ?.includes(e.target.value?.toLocaleLowerCase())
-    //   )
-    // );
-    const searchBR = "https://lap-center.herokuapp.com/api/product?productBrand=";
-    const linkSearchBR = searchBR.concat(e.target.value)
-    console.log(linkSearchBR);
-    axios
-      .get(linkSearchBR)
-      .then(function (response) {
-        setData(response.data.products);
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
-      setPrice("")
-      setSearch("")
-  };
-  const onSubmitPrice = async (e) => {
-    setPrice(e.target.value);
-    if (e.target.value == 1) {
-      // setData(
-      //   data.sort((a, b) => parseFloat(a.price) - parseFloat(b.price))
-      // );
-      axios
-      .get("https://lap-center.herokuapp.com/api/product?orderByColumn=price&orderByDirection=asc")
-      .then(function (response) {
-        setData(response.data.products);
-      })
-    } 
-    else if (e.target.value == 2) {
-      // setData(
-      //   data.sort((a, b) => parseFloat(b.price) - parseFloat(a.price))
-      // );
-      axios
-      .get("https://lap-center.herokuapp.com/api/product?orderByColumn=price&orderByDirection=desc")
-      .then(function (response) {
-        setData(response.data.products);
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
-      
-    } 
-    setBrand("All")
-    setSearch("")
+    let url = `https://lap-center.herokuapp.com/api/product?productName=${search}&productBrand=${brand}&orderByColumn=price&orderByDirection=${price}`;
+    fetchData(url);
   };
 
-  const fetchData = async () => {
-    // await setData(products);
-    ////////Cách 1
-    ///start call API
-    axios
-      .get("https://lap-center.herokuapp.com/api/product")
+  const onSubmitBrand = async (e) => {
+    await setBrand(e.target.value);
+    let url = `https://lap-center.herokuapp.com/api/product?productName=${search}&productBrand=${e.target.value}&orderByColumn=price&orderByDirection=${price}`;
+    await fetchData(url);
+  };
+
+  const onSubmitPrice = async (e) => {
+    await setPrice(e.target.value);
+    let url = `https://lap-center.herokuapp.com/api/product?productName=${search}&productBrand=${brand}&orderByColumn=price&orderByDirection=${e.target.value}`;
+    await fetchData(url);
+  };
+
+  const handlePaginationChange = async (e, { activePage }) => {
+    await setLoading(true);
+    await setPageNumber(activePage);
+    let url = `https://lap-center.herokuapp.com/api/product?productName=${search}&productBrand=${brand}&orderByColumn=price&orderByDirection=${price}&pageSize=12&pageNumber=${activePage}`;
+    await axios
+      .get(url)
       .then(function (response) {
         // handle success
-        console.log('đúng',response.data.products);
         setData(response.data.products);
+        setTotalPage(response.data.totalPage);
+
+        setLoading(false);
       })
       .catch(function (error) {
         // handle error
         console.log(error);
+      });
+  };
+  
+  const fetchData = async (url) => {
+    setLoading(true);
+    axios
+      .get(url)
+      .then(function (response) {
+        console.log(response);
+        setPageNumber(1);
+        setData(response.data.products);
+        setTotalPage(response.data.totalPage);
+        setLoading(false);
       })
-      /// end call API
-      ///////Cách 2
-      // fetch('https://lap-center.herokuapp.com/api/product')
-      // .then(response => response.json())
-      // .then(data => {
-      //   console.log('Success:', data);
-      //   setData(data.products)
-      // })
-      // .catch((error) => {
-      //   console.error('Error:', error);
-      // });
+      .catch(function (error) {
+        setLoading(false);
+      });
   };
 
   useEffect(async () => {
-    await fetchData();
+    let url = `https://lap-center.herokuapp.com/api/product?`;
+    await fetchData(url);
   }, []);
-  const [loadingPage, setLoadingPage] = useState(true);
-  setTimeout(function(){ setLoadingPage(false) }, 2000);
 
   return (
-    <Segment className="home-container" loading={loadingPage}>
+    <div className="home-container">
       <Navbar className="navbar" />
-
-      <div className="menuLeft">
-        <Input
-          icon={
-            <Icon
-              name="search"
-              inverted
-              circular
-              link
-              onClick={onSubmitSearch}
-            />
-          }
-          placeholder="Search..."
-          value={search}
-          onChange={onChangeSearch}
-        />
+      <div className="filter">
+        <div className="search">
+          <Input
+            icon={
+              <Icon
+                name="search"
+                inverted
+                circular
+                link
+                onClick={onSubmitSearch}
+              />
+            }
+            placeholder="Search..."
+            value={search}
+            onChange={onChangeSearch}
+          />
+        </div>
         <div className="selectForm">
-          <b>Hãng</b>
           <select className="selectBox" value={brand} onChange={onSubmitBrand}>
             <option selected value="">
               All
@@ -160,21 +108,44 @@ function Home() {
           </select>
         </div>
         <div className="selectForm">
-          <b>Giá</b>
           <select className="selectBox" value={price} onChange={onSubmitPrice}>
-            <option selected value=""></option>
-            <option value="1">Từ thấp đến cao</option>
-            <option value="2">Từ cao đến thấp</option>
+            <option selected value=" ">
+              Mặc định
+            </option>
+            <option value="asc">Từ thấp đến cao</option>
+            <option value="desc">Từ cao đến thấp</option>
           </select>
         </div>
       </div>
-      <div className="product">
-        {data.map((item) => (
-          <Card product={item} />
-        ))}
+      <div className="container-body">
+        <div className="menuLeft"></div>
+        <Segment loading={loading} className="product">
+          {data.length === 0 ? (
+            <div className="noResults">
+              <h1 style={{ textAlign: "center" }}>
+                Không tìm thấy sản phẩm nào!!
+              </h1>
+            </div>
+          ) : (
+            data.map((item) => <Card product={item} />)
+          )}
+        </Segment>
+        <div className="menuRight"></div>
       </div>
-    </Segment>
-    
+      <div className="paginator">
+        <Pagination
+          boundaryRange={0}
+          // defaultActivePage={1}
+          activePage={pageNumber}
+          ellipsisItem={true}
+          firstItem={true}
+          lastItem={true}
+          siblingRange={1}
+          totalPages={totalPage}
+          onPageChange={handlePaginationChange}
+        />
+      </div>
+    </div>
   );
 }
 

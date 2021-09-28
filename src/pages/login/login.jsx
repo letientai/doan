@@ -25,7 +25,7 @@ function Login() {
       if (userName === account.username && password === account.password) {
         console.log("Đăng nhập thành công");
         alert("Đăng nhập thành công!!!");
-        history.push("/");
+        history.push("/doan/doan");
       } else {
         console.log("Đăng nhập thất bại");
         alert("Nhập sai tên đăng nhập hoặc mật khẩu!!!");
