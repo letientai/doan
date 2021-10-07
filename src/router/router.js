@@ -17,7 +17,7 @@ function Router() {
                 <Route path="/doan/contact" component={Contact} />
                 <Route path="/doan/login" component={Login} />
                 <Route path="/doan/register" component={Register} />
-                <Route path="/doan/productDetail" component={ProductDetail} />
+                <Route path="/doan/product/:id" component={ProductDetail} />
                 <Route component={Home} />
             </Switch>
         </BrowserRouter>
