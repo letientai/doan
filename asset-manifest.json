@@ -1,26 +1,27 @@
 {
   "files": {
-    "main.css": "/doan/static/css/main.4be8207a.chunk.css",
-    "main.js": "/doan/static/js/main.3d6ae81f.chunk.js",
-    "main.js.map": "/doan/static/js/main.3d6ae81f.chunk.js.map",
-    "runtime-main.js": "/doan/static/js/runtime-main.608d8a83.js",
-    "runtime-main.js.map": "/doan/static/js/runtime-main.608d8a83.js.map",
-    "static/css/2.961bfe8f.chunk.css": "/doan/static/css/2.961bfe8f.chunk.css",
-    "static/js/2.ab031297.chunk.js": "/doan/static/js/2.ab031297.chunk.js",
-    "static/js/2.ab031297.chunk.js.map": "/doan/static/js/2.ab031297.chunk.js.map",
-    "static/js/3.ae598551.chunk.js": "/doan/static/js/3.ae598551.chunk.js",
-    "static/js/3.ae598551.chunk.js.map": "/doan/static/js/3.ae598551.chunk.js.map",
+    "main.css": "/doan/static/css/main.3d75b7e5.chunk.css",
+    "main.js": "/doan/static/js/main.d504141c.chunk.js",
+    "main.js.map": "/doan/static/js/main.d504141c.chunk.js.map",
+    "runtime-main.js": "/doan/static/js/runtime-main.326d924d.js",
+    "runtime-main.js.map": "/doan/static/js/runtime-main.326d924d.js.map",
+    "static/css/2.429bf308.chunk.css": "/doan/static/css/2.429bf308.chunk.css",
+    "static/js/2.7eb2f5b8.chunk.js": "/doan/static/js/2.7eb2f5b8.chunk.js",
+    "static/js/2.7eb2f5b8.chunk.js.map": "/doan/static/js/2.7eb2f5b8.chunk.js.map",
+    "static/js/3.e63f1ae0.chunk.js": "/doan/static/js/3.e63f1ae0.chunk.js",
+    "static/js/3.e63f1ae0.chunk.js.map": "/doan/static/js/3.e63f1ae0.chunk.js.map",
     "index.html": "/doan/index.html",
-    "static/css/2.961bfe8f.chunk.css.map": "/doan/static/css/2.961bfe8f.chunk.css.map",
-    "static/css/main.4be8207a.chunk.css.map": "/doan/static/css/main.4be8207a.chunk.css.map",
-    "static/js/2.ab031297.chunk.js.LICENSE.txt": "/doan/static/js/2.ab031297.chunk.js.LICENSE.txt",
-    "static/media/semantic.min.css": "/doan/static/media/outline-icons.ddae9b1b.woff"
+    "static/css/2.429bf308.chunk.css.map": "/doan/static/css/2.429bf308.chunk.css.map",
+    "static/css/main.3d75b7e5.chunk.css.map": "/doan/static/css/main.3d75b7e5.chunk.css.map",
+    "static/js/2.7eb2f5b8.chunk.js.LICENSE.txt": "/doan/static/js/2.7eb2f5b8.chunk.js.LICENSE.txt",
+    "static/media/semantic.min.css": "/doan/static/media/outline-icons.ddae9b1b.woff",
+    "static/media/styles.css": "/doan/static/media/revicons.e8746a62.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.608d8a83.js",
-    "static/css/2.961bfe8f.chunk.css",
-    "static/js/2.ab031297.chunk.js",
-    "static/css/main.4be8207a.chunk.css",
-    "static/js/main.3d6ae81f.chunk.js"
+    "static/js/runtime-main.326d924d.js",
+    "static/css/2.429bf308.chunk.css",
+    "static/js/2.7eb2f5b8.chunk.js",
+    "static/css/main.3d75b7e5.chunk.css",
+    "static/js/main.d504141c.chunk.js"
   ]
 }
