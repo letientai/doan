@@ -6,6 +6,7 @@ import Login from "../pages/login/login";
 import NotFoundPage from "../pages/notFound/notFound";
 import Register from "../pages/register/register";
 import ProductDetail from "../pages/productDetail/productDetail";
+import Buy from "../pages/buy/buy";
 
 
 function Router() {
@@ -18,7 +19,8 @@ function Router() {
                 <Route path="/doan/login" component={Login} />
                 <Route path="/doan/register" component={Register} />
                 <Route path="/doan/product/:id" component={ProductDetail} />
-                <Route component={Home} />
+                <Route path="/doan/buy/:id" component={Buy} />
+                <Route component={NotFoundPage} />
             </Switch>
         </BrowserRouter>
     )

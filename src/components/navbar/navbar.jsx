@@ -8,7 +8,7 @@ const Navbar = (props) => {
   const history = useHistory();
 
   const backToHome = () => {
-    history.push("/doan/doan");
+    history.push("/doan");
   }
   return (
     <div className="navbar">
@@ -17,16 +17,16 @@ const Navbar = (props) => {
         <b>LAPCENTER</b>
       </p>
     <div className="options">
-      <Link to="./" className="option">
+      <Link to="/doan" className="option">
         <span> <Icon name="home" /> TRANG CHỦ </span>
       </Link>
-      <Link to="./introduct" className="option">
+      <Link to="/doan/introduct" className="option">
         <span> <Icon name="info circle" /> GIỚI THIỆU </span>
       </Link>
-      <Link to="./contact" className="option">
+      <Link to="/doan/contact" className="option">
         <span> <Icon name="phone" /> LIÊN HỆ </span>
       </Link>
-      <Link to="./login" className="option">
+      <Link to="/doan/login" className="option">
         <span> <Icon name="user" /> LOGIN </span>
       </Link>
       </div>
