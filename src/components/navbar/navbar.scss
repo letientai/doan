@@ -8,11 +8,11 @@
   background: linear-gradient(-180deg,#08b851,#51f57a);
   position: fixed;
   z-index: 2;
-
   .logo-container {
     height: 50%;
     width: 70px;
     display: flex;
+    cursor: pointer;
     b{
       font-size: 30px;
       padding: 25px 10px;
