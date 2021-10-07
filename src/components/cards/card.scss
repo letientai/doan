@@ -25,7 +25,7 @@
     }
   
     .btn-success {
-      background-color: rgb(41, 171, 5);
+      background-color: #ff0037;
       color: beige;
       padding: 10px 0;
       outline: none;
@@ -45,8 +45,8 @@
       outline: none;
     }
     .btn-3 {
-      background: rgb(22, 190, 78);
-      background: linear-gradient(10deg, rgb(22, 190, 78) 30%, rgb(3, 192, 44) 70%);
+      background: #ff0037;
+      background: linear-gradient(10deg, #ff0037 30%, rgb(247, 26, 44) 70%);
       height: 40px;
       line-height: 42px;
       padding: 0;
@@ -65,7 +65,7 @@
       content: "";
       right: 0;
       top: 0;
-       background: rgb(10, 175, 10);
+       background: rgb(247, 26, 44);
       transition: all 0.3s ease;
     }
     .btn-3:before {
@@ -87,7 +87,7 @@
       width: 100%;
     }
     .btn-3 span:hover{
-       color: rgb(22, 190, 78);
+       color: #ff0037;
     }
     .btn-3 span:before,
     .btn-3 span:after {
@@ -95,7 +95,7 @@
       content: "";
       left: 0;
       bottom: 0;
-       background: rgb(22, 190, 78);
+       background: #ff0037;
       transition: all 0.3s ease;
     }
    

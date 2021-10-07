@@ -5,7 +5,10 @@
   justify-content: space-between;
   margin-bottom: 25px;
   // background-color: #132898;
-  background: linear-gradient(-180deg,#08b851,#51f57a);
+  // background: linear-gradient(to right,#ff2554,#e4052a);
+  background: rgb(255,75,4);
+background: linear-gradient(90deg, rgba(255,75,4,1) 0%, rgba(200,11,11,0.9780287114845938) 100%);
+
   position: fixed;
   z-index: 2;
   .logo-container {
@@ -13,7 +16,7 @@
     width: 70px;
     display: flex;
     cursor: pointer;
-    b{
+    b {
       font-size: 30px;
       padding: 25px 10px;
       color: white;
@@ -36,21 +39,22 @@
     align-items: center;
     justify-content: flex-end;
     margin-right: 20px;
-    
+
     .option {
       color: #fff;
       padding: 10px 15px;
       text-decoration: none;
       cursor: pointer;
+      
     }
   }
 }
-  
-@media screen and (max-width: 800px){
-  .logo-container{
+
+@media screen and (max-width: 800px) {
+  .logo-container {
     display: none !important;
   }
-  .options{
+  .options {
     width: 70% !important;
     margin: auto !important;
   }

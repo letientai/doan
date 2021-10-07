@@ -4,10 +4,32 @@ import Navbar from "../../components/navbar/navbar";
 import { Segment, Button, Table } from "semantic-ui-react";
 import { useLocation } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-// import 'react-multi-carousel/lib/styles.css';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import CardItem from "../../components/cardItem/cardItem";
 
 const axios = require("axios");
 
+
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 4
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
+  }
+};
 
 const ProductDetail = (props) => {
   const [data, setData] = useState([]);
@@ -20,7 +42,7 @@ const ProductDetail = (props) => {
   // const id = location.pathname?.replace('product/', '');
 
   const moveToBuy = () => {
-    history.push(`/buy/${id}`);
+    history.push(`/doan/buy/${id}`);
   };
 
   useEffect(() => {
@@ -51,7 +73,7 @@ const ProductDetail = (props) => {
         `https://lap-center.herokuapp.com/api/product?productBrand=${data?.brand}&pageSize=10&pageNumber=1`
       )
       .then(function (response) {
-        console.log("product more: ", response.data.products);
+        console.log("ahihi",response.data.products );
         setSameProduct(response.data.products);
         setLoading(false);
       })
@@ -63,12 +85,12 @@ const ProductDetail = (props) => {
   const onChooseImage = (image) => {
     setImage(image);
   };
-
+ 
   return (
     <div>
       <Navbar />
-      <Segment className="detail-segment-container">
-        <div className="detail-product-name">{data.name} tên</div>
+      <Segment className="detail-segment-container" loading = {loading}>
+        <div className="detail-product-name">{data.name}</div>
         <div className="detail-status">
           <p>Tình trạng: Còn hàng</p>
           <p style={{ marginLeft: "20px" }}>Bảo hành: 24 tháng</p>
@@ -98,9 +120,9 @@ const ProductDetail = (props) => {
               <div className="discount-content">something</div>
             </div>
             <div className="detail-buy">
-              <Button color="red">MUA NGAY</Button>
+              <Button color="red" onClick={moveToBuy}>MUA NGAY</Button>
               <p>
-                GỌI NGAY <a href="tel:+84969442510"> 0969 44 2510 </a> ĐỂ GIỮ
+                GỌI NGAY <a href="tel:+84916786817"> 0916 786 817 </a> ĐỂ GIỮ
                 HÀNG
               </p>
             </div>
@@ -161,8 +183,20 @@ const ProductDetail = (props) => {
             </Table.Body>
           </Table>
         </div>
+        <div className="same-product">
+          <h3>Sản phẩm cùng thương hiệu</h3>
+          <hr />
+          <Carousel  responsive={responsive} showDots={true}>
+           {sameProduct.map((item) => (<CardItem product={item}/>))}
+            
+          </Carousel>
+        </div>
       </Segment>
     </div>
+
+    
   );
+  
 };
+
 export default ProductDetail;
